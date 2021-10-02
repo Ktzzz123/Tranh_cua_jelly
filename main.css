@@ -3,7 +3,7 @@ html,body{
     margin: 0;
     padding: 0;
     font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     background-color: rgb(212, 203, 203);
 }
 * {
@@ -18,38 +18,55 @@ html,body{
 }
 .nav-list{
     padding-left: 0;
-    margin: auto 16px;
+    /* margin: auto 10px; */
 }
 .nav-item{
     color: cornsilk;
     list-style: none;
-    margin: 0 8px;
+    margin: 0 15px;
     display: inline-block;
 }
-.form-container{
-    max-width: 720px;
-    padding: 32px;
-    margin: 36px auto 0 auto;
-    background-color: rgba(49, 128, 121, 0.925);
-}
 
-.form__row{
-    padding:8px 0;
-    display:flex;
-}
-.form__label {
-    min-width: 80px;
-}
-.form__input{
-    flex:1;
-
-}
 
 /* slogan */
 .slogan {
-    height: 200px;
+    height: 100px;
     background-color: rgb(179, 155, 155);
+    text-align:center;
+    font-size: 30px;
+    font-weight:500;
     
+    background-image: url(https://toigingiuvedep.vn/wp-content/uploads/2021/01/hinh-anh-minh-hoa-4k-chu-de-thien-nhien.jpg);
+    background-repeat: no-repeat;
+
 }
+.slogan-content{
+    display: flex;
+    margin: auto;
+}
+h1{
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+button{
+    width:auto;
+    border:solid rgb(141, 126, 126);
+    background-color: rgb(65, 18, 18);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+    margin-left: 10px;
+
+}
+
+button:hover{
+    background-color: chocolate;
+}
+
+
 
 
