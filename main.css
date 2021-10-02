@@ -96,3 +96,64 @@ html,body{
 .auth-form__aside{
     margin-top: 18px;
 }
+.auth-form__policy-text{
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0 12px;
+}
+.auth-form__link{
+    text-decoration: none;
+    color:teal;
+}
+.auth-form__controls{
+    margin-top: 80px;
+}
+
+/* Button style */
+.btn{
+    min-width: 142px;
+    min-height: 35px;
+    text-decoration: none;
+    border:none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.btn:hover{
+    background-color:  rgba(0,0,0,0.5);
+}
+.btn.btn--dangky{
+    background-color: teal;
+    color: white;
+}
+.auth-form__controls{
+    display: flex;
+    justify-content: flex-end;
+}
+.auth-form__controls-back{
+    margin-right: 8px;
+}
+.auth-form__socials{
+    background-color: #F5F5F5;
+    padding: 12px 35px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.btn.btn--size-S{
+    height: 30px;
+    font-size: 12px;
+}
+.btn.btn-facebook{
+    background-color: #0b82ed;
+}
+.btn.btn-facebook:hover{
+   background-color:  rgba(0,0,0,0.5);
+}    
