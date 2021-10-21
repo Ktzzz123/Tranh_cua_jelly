@@ -6,7 +6,6 @@ html,body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(226, 217, 175);
 }
-
 * {
     box-sizing: border-box;
 }
@@ -35,6 +34,81 @@ html,body{
 .header__nav-list__item-bold{
     font-weight: bold;
 }
+/* Modal */
+.modal{
+    position:fixed;
+    top:0;
+    left: 0;
+    right:0;
+    bottom:0;
+    left:0;
+    display: flex;
+}
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+.moda__body{
+    width: 500px;
+    height: 500px;
+    background-color:white;
+    margin: auto;
+    z-index: 3;
+    border-radius: 5px;
+}
+
+/* Authen modal */
+.auth-form{
+    width: 500px;
+}
+.auth-form__container{
+    padding:0 32px;
+}
+.auth-form__header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.auth-form__heading{
+    font-size: 2.2rem;
+    font-weight: 400;
+}
+.auth-form__switch-btn{
+    font-size: 1.6rem;
+    color:teal;
+    cursor: pointer;
+}
+.auth-form__input{
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    padding: 0 12px;
+    font-size: 1.4rem;
+    border: 1px solid grey;
+    border-radius: 2px;
+    outline: none;
+}
+.auth-form__input:focus{
+    border-color: black;
+}
+.auth-form__aside{
+    margin-top: 18px;
+}
+.auth-form__policy-text{
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0 12px;
+}
+.auth-form__link{
+    text-decoration: none;
+    color:teal;
+}
+.auth-form__controls{
+    margin-top: 80px;
+}
+
 /* Button style */
 .btn{
     min-width: 142px;
@@ -82,56 +156,4 @@ html,body{
 }
 .btn.btn-facebook:hover{
    background-color:  rgba(0,0,0,0.5);
-}
-
-/* Footer */
-.footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: black;
-    color: white;
-    text-align:left;
-}.footer{
-    display: flex;
-}
-ul{
-    list-style: none;
-    padding: 0;
-}
-.footer_introduce{
-    width: 40%;
-    margin-left: 50px;
-}
-.introduce-text{
-    margin-top: 0;
-}
-
-.footer_contact{
-    display: flex;
-    text-align: left;
-
-}
-.contact_name{
-    width: 150px;
-    font-size: 15px;
-    padding: 0 0px 5px 0px;
-    text-align: left;
-    margin-left: 0;
-    margin-bottom: 0;
-}
-.footer_contact__contact{
-    width: 50px;
-}
-.contact_name_item{
-    margin: 0;
-    align-content:flex-start;
-}
-.footer_contact__contact{
-    width: 50%;
-}
-h5{
-    align-content:flex-start;
-    padding: 0;
 }
