@@ -13,7 +13,7 @@ html,body{
 /* nav-bar */
 .header{
     /* position: fixed; */
-    height: 50px;
+    height: 50px!important;
     background-image: linear-gradient(0,rgb(33, 44, 61),rgb(56, 99, 163));
 }
 
@@ -22,20 +22,37 @@ html,body{
     justify-content:space-between ;
 }
 .header__nav-list{
+  position: relative;
     list-style: none;
     padding-left: 0;
 
     
 }
 .header__nav-list__item{
+  position: absolute;
     display: inline-block;
     font-size: 20px;
     color: white;
-    margin: 0 10px;
+    /* margin: 0 10px; */
     position: relative;
 }
 .header__nav-list__item-bold{
     font-weight: bold;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  float: left;
+  margin-top: -15px;
+}
+.button:hover{
+  background-color: rgb(175, 175, 175);
+  color: black;
 }
 /* Slogan */
 .slogan{
