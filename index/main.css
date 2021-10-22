@@ -43,7 +43,7 @@ html,body{
     height: 250px;
     border-style: solid;
     border-width: 1px;
-    background-image: url(./images/Slogan1.png);
+    background-image: url(../images/Slogan1.png);
     background-size: auto;
 }
 .slogan_text{
@@ -71,7 +71,7 @@ html,body{
 /* //////////////////////// */
 .product__item{
     max-width: 250px;
-    height: 430px;
+    height: 400px;
     width: 100%;
     background: #fff;
     margin-left: 20px;
@@ -80,6 +80,7 @@ html,body{
     border-radius: 5px;
   
   }
+ 
   .list__item{
     display: flex;
     align-items: center;
@@ -197,6 +198,23 @@ html,body{
     height: 0;
     overflow: hidden;
   }
+/* Màu nước */
+.container_mauNuoc{
+  border-radius: 5px;
+  margin-top: 10px;
+  border-style: solid;
+  border-width: 1px;
+}
+.product__item_Maunuoc{
+  max-width: 280px;
+  height: 400px;
+  width: 100%;
+  background: #fff;
+  margin-left: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+}
 /* Footer */
 .footer{
     /* position: fixed; */
