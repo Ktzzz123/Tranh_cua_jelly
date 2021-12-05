@@ -55,10 +55,25 @@ html,body{
 }
 /* container */
 .picture {
-    border: 2px black;
+ margin: 25px 25px 25px 25px;
+ 
 }
-.infor {
-    border: black 2px;
+.tranh {
+    border-color: black;
+    background-size: 100%;
+    border-style: solid;
+    border-width: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inf {
+    background-position: center;
+    margin: 25px 25px 25px 25px;
+    /* border-style: solid; */
+    border-width: 5px;
+    font-size: x-large;
 }
 /* Footer */
 .footer{
