@@ -5,6 +5,7 @@ const cors = require('cors')
 const fileUpload = require('express-fileupload')
 const cookieParser = require('cookie-parser')
 
+// const userRouter = 
 
 const app = express()
 app.use(express.json ())
@@ -26,6 +27,9 @@ mongoose.connect(URL, {
     console.log('Connect to database successfully!')
 })
 
+
+//Routes
+app.use('/user', require('./routes/userRouter'))
 
 
 const PORT =  process.env.PORT || 5000
