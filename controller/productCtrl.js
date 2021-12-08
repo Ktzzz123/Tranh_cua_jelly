@@ -1,9 +1,13 @@
 const Products = require('../models/productModel')
 
+//CRUD
+
 const productCtr = {
     getProducts: async(req, res)=>{
         try{
-           const products = await Products.find()
+            console.log(req.query)
+            const features = new APIfeatures(Products.find(), req.query).filtering().sorting()
+           const products = await features.query
            res.json(products)
         }catch(err){
             return res.status(500).json({smg: err.message})
@@ -45,5 +49,36 @@ const productCtr = {
     },
 
 }
+// Filter, Sort and Paginating  
 
+class APIfeatures {
+    constructor(query, queryString){
+        this.query = query;
+        this.queryString=queryString;
+    }
+    filtering(){
+        const queryObject = {...this.queryString}
+        const excludeFields = ['page','sort','limit']
+        excludeFields.forEach(el=>delete(queryObject[el])) //delete query after close page
+        let queryStr= JSON.stringify(queryObject)
+        queryStr = queryStr.replace(/\b(gte|gt|lt|lte|regex)\b/g, match => '$' +match) // identify special character
+        // gte : >=
+        // lte : <=
+        // gt  : >
+        // lt  : <
+        this.query.find(JSON.parse(queryStr)) // find product by queryStr
+        return this;
+
+    }
+    sorting(){
+        if(this.queryString.sort){
+            const sortBy = this.queryString.sort.split(',').join(' ')
+            console.log(sortBy);
+        }else{
+            this.query = this.query.sort('-createdAt')
+        }
+        return this;
+    }
+    paginating(){}
+}
 module.exports = productCtr
