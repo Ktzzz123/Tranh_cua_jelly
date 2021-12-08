@@ -30,6 +30,7 @@ mongoose.connect(URL, {
 
 //Routes
 app.use('/user', require('./routes/userRouter'))
+app.use('/api', require('./routes/categoryRouter'))
 
 
 const PORT =  process.env.PORT || 5000
