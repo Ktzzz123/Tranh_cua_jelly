@@ -7,9 +7,33 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.App{
+  
+}
+.Container{
+  max-width: 1230px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-shadow: 0 0 35px #eee;
+}
+a{
+  text-decoration: none;
+}
+ ul li{
+   list-style: none;
+ }
+
+ button{
+   border: none;
+   outline: none;
+   cursor: pointer;
+   background: transparent;
+ }
