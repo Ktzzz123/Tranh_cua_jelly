@@ -14,12 +14,13 @@ export default makeStyles((theme) => ({
         backgroundColor:'black',
         // background: '#ddd!important',
         position: 'sticky',
-        top: 0
+        top: 0,
+        color:'white'
     },
     logo:{
         flex: 1,
         textTransform: 'uppercase',
-        // color: 'black'
+        color: 'white'
     },
     menu:{
         color: 'white!important'

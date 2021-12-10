@@ -7,7 +7,7 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: white;
+  /* color: white; */
 }
 
 code {
@@ -26,6 +26,7 @@ code {
 }
 a{
   text-decoration: none;
+  color: #fff;
 }
  ul li{
    list-style: none;
