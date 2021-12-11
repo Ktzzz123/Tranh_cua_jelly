@@ -40,3 +40,5 @@ a{
  }
 
  @import url("./components/mainPages/products/product.css");
+
+ @import url('./components/mainPages/utilts/loading/css.css');

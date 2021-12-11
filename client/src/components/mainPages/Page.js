@@ -6,6 +6,7 @@ import Login from './auth/Login'
 import Register from './auth/Register'
 import Cart from './cart/Cart'
 import NotFound from './utilts/not_found/NotFound'
+import Loading from './utilts/loading/loading'
 
 
 
@@ -17,6 +18,9 @@ const mainPage = () => {
            <Route path = '/login' exact component = {Login}/>
            <Route path = '/register' exact component = {Register}/>
            <Route path = '/cart' exact component = {Cart}/>
+
+           <Route path = '/loading' exact component = {Loading}/>
+
            <Route path = '*' exact component = {NotFound}/>
         </Switch>
     )
