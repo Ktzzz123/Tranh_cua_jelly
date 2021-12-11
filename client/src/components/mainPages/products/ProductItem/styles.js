@@ -15,7 +15,7 @@ export default makeStyles((theme) => ({
     image:{
         // alignItems:'center',
         margin: 'auto',
-        width:'100px',
+        maxWidth:'300px',
         height:'300px',
         display:'block',
         objectFit:'cover'

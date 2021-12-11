@@ -9,7 +9,7 @@ function Products() {
     const classes = useStyles()
     const state = useContext(GlobalState)
     const [products]= state.productsAPI.products
-    console.log({products})
+    // console.log({products})
     return (
         // <div className={classes.products}>
         <div className="products">
