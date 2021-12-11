@@ -57,8 +57,28 @@ export default makeStyles((theme) => ({
         display: 'inline-block',
         textTransform: 'uppercase',
         letterSpacing: '2px',
+        marginBottom: '30px'
 
 
-    }
+    },
+    product:{
+        width: '100%',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill,minmax(300px,1fr))',
+        justifyItems: 'center',
+        margin: '0 20px',
+    },
+    fullImage:{
+        borderTop: '1px solid #ddd',
+        padding: '20px',
+        
+        width: '90%',
+        height: 'auto',
+        "& img":{
+            width: '100%',
+            height: '100%',
+        },
+        margin:'auto'
+    },
   
 }))
