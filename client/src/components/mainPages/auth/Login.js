@@ -14,6 +14,7 @@ function Login() {
         const {name, value} = e.target;
         setUser({...user, [name]:value})
     }
+
     const loginSubmit = async e =>{
         e.preventDefault()
         try{
@@ -26,22 +27,22 @@ function Login() {
     }
     return (
         <div className={classes.loginPage}>
-        <form  onSubmit={loginSubmit}>
-            <div class="auth-form__header">
-                <h3 class="auth-form__heading">Đăng nhập</h3>
-            </div>
-            <input type="email" name = "email" required placeholder="email" 
-            value = {user.email} onChange={onChangeInput} />
+            <form  onSubmit={loginSubmit}>
+                <div class="auth-form__header">
+                    <h3 class="auth-form__heading">Login</h3>
+                </div>
+                <input type="email" name = "email" required placeholder="email" 
+                value = {user.email} onChange={onChangeInput} />
 
-            <input type="password" name = "password" required placeholder="password" 
-            autoComplete='on' value = {user.password} onChange={onChangeInput}/>
-          
-            <div className = {classes.row}>
-                <Link to = '/register'>Register</Link>
-                <button type='submit'>Login</button>
-                
-            </div>
-        </form>
+                <input type="password" name = "password" required placeholder="password" 
+                autoComplete='on' value = {user.password} onChange={onChangeInput}/>
+            
+                <div className = {classes.row}>
+                    <Link to = '/register'>Register</Link>
+                    <button type='submit'>Login</button>
+                    
+                </div>
+            </form>
         </div>
     )
 }

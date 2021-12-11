@@ -5,10 +5,13 @@ import BtnRender from './btnRender'
 import useStyles from './styles'
 
 
-function ProductItem({product}) {
+function ProductItem({product, isAdmin}) {
     const classes = useStyles()
     return (
         <div className = {classes.product_card}>
+            {
+                isAdmin && <input type="checkbox" checked={product.checked}></input>
+            }
             <img className = {classes.image} src={product.images.url} alt="" />
             <div className={classes.product_infor}>
                 <h2  title={product.title }>{product.title}</h2>
