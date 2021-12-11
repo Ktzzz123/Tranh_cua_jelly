@@ -26,7 +26,7 @@ code {
 }
 a{
   text-decoration: none;
-  color: #fff;
+  /* color: #fff; */
 }
  ul li{
    list-style: none;
@@ -38,3 +38,5 @@ a{
    cursor: pointer;
    background: transparent;
  }
+
+ @import url("./components/mainPages/products/product.css");

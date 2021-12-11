@@ -23,7 +23,7 @@ const productCtr = {
             if(!images) return res.status(500).json({smg: 'no image'})
 
             const product = await Products.findOne({product_id})
-            if(product)return res.status(500).json({smg: err.message})
+            if(product)return res.status(500).json({smg: "no product"})
             const newProduct = new Products({product_id, title: title.toLowerCase(), price, description, content, images, category})
             await newProduct.save()
             res.json({msg: 'create successfully'})

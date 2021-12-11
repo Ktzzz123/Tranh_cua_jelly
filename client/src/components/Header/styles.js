@@ -15,7 +15,8 @@ export default makeStyles((theme) => ({
         // background: '#ddd!important',
         position: 'sticky',
         top: 0,
-        color:'white'
+        color:'white',
+        zIndex: 1
     },
     logo:{
         flex: 1,
