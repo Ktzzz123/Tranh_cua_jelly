@@ -25,18 +25,21 @@ function Login() {
         }
     }
     return (
-        <div className = {classes.loginPage}>
-        <form onSubmit={loginSubmit}>
-
+        <div className={classes.loginPage}>
+        <form  onSubmit={loginSubmit}>
+            <div class="auth-form__header">
+                <h3 class="auth-form__heading">Đăng nhập</h3>
+            </div>
             <input type="email" name = "email" required placeholder="email" 
             value = {user.email} onChange={onChangeInput} />
 
             <input type="password" name = "password" required placeholder="password" 
             autoComplete='on' value = {user.password} onChange={onChangeInput}/>
-            
+          
             <div className = {classes.row}>
-                <button type='submit'>Login</button>
                 <Link to = '/register'>Register</Link>
+                <button type='submit'>Login</button>
+                
             </div>
         </form>
         </div>

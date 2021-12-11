@@ -1,4 +1,5 @@
-import React, {createContext, useState} from 'react'
+import Axios from 'axios';
+import React, {createContext, useState, useEffect} from 'react'
 import ProductsAPI from './api/ProductsAPI'
 
 
@@ -9,6 +10,15 @@ export const DataProvider = ({children})=>{
  
     const [token, setToken] = useState(false);
 
+    const refreshToken = async () =>{
+        const res = await Axios.get('/user/refresh_token')
+        setToken(res.data.accesstoken)
+
+    }
+    useEffect(()=>{
+        const firstLogin =  localStorage.getItem('firstLogin')
+        if (firstLogin) refreshToken()
+    },[])
 
     
     const state = {

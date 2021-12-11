@@ -1,0 +1,232 @@
+
+html,body{
+    margin: 0;
+    padding: 0;
+    /* font-size: 14px; */
+    font-family: Serif;
+    /* background-color: rgb(175, 187, 226); */
+}
+
+* {
+    box-sizing: border-box;
+}
+/* nav-bar */
+.header{
+    /* position: fixed; */
+    height: 50px!important;
+    /* background-image: linear-gradient(0,rgb(33, 44, 61),rgb(56, 99, 163)); */
+}
+
+.header__nav{
+    display: flex;
+    justify-content:space-between ;
+}
+.header__nav-list{
+  position: relative;
+    list-style: none;
+    padding-left: 0;
+
+    
+}
+.header__nav-list__item{
+  position: absolute;
+    display: inline-block;
+    font-size: 20px;
+    color: white;
+    /* margin: 0 10px; */
+    position: relative;
+}
+.header__nav-list__item-bold{
+    font-weight: bold;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  /* float: left; */
+  margin-top: -15px;
+}
+.button:hover{
+  /* background-color: rgb(175, 175, 175); */
+  color: black;
+}
+/* Modal */
+.modal{
+    display: flex;
+}
+.modal_picture{
+    margin: 20px 20px;
+    width: 700px;
+    height: 600px;
+    /* background-color: black; */
+    background-image: url(./img/login.png);
+    
+}
+.moda__body{
+    
+    width: 500px;
+    height: 600px;
+    background-color:white;
+    margin: 20px auto 20px;
+    z-index: 3;
+    border-radius: 5px;
+}
+
+/* Authen modal */
+.auth-form{
+    width: 500px;
+}
+.auth-form__container{
+    padding:0 32px;
+}
+.auth-form__header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.auth-form__heading{
+    font-size: 2.2rem;
+    font-weight: 400;
+}
+.auth-form__switch-btn{
+    font-size: 1.6rem;
+    color:teal;
+    cursor: pointer;
+}
+.auth-form__input{
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    padding: 0 12px;
+    font-size: 1.4rem;
+    border: 1px solid grey;
+    border-radius: 2px;
+    outline: none;
+}
+.auth-form__input:focus{
+    border-color: black;
+}
+.auth-form__aside{
+    margin-top: 18px;
+}
+.auth-form__policy-text{
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0 12px;
+}
+.auth-form__link{
+    margin: auto;
+    text-decoration: none;
+    color:teal;
+}
+.auth-form__controls{
+    margin-top: 80px;
+}
+
+/* Button style */
+.btn{
+    min-width: 142px;
+    min-height: 35px;
+    text-decoration: none;
+    border:none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.btn:hover{
+    background-color:  rgba(0,0,0,0.5);
+}
+.btn.btn--dangky{
+    background-color: teal;
+    color: white;
+}
+.auth-form__controls{
+    display: flex;
+    justify-content: flex-end;
+}
+.auth-form__controls-back{
+    margin-right: 8px;
+}
+.auth-form__socials{
+    /* background-color: #F5F5F5; */
+    padding: 12px 35px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.btn.btn--size-S{
+    height: 30px;
+    font-size: 12px;
+}
+.btn.btn-facebook{
+    background-color: #0b82ed;
+}
+.btn.btn-facebook:hover{
+   background-color:  rgba(0,0,0,0.5);
+}
+
+/* Footer */
+.footer{
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align:left;
+}.footer{
+    display: flex;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+.footer_introduce{
+    width: 40%;
+    margin-left: 50px;
+}
+.introduce-text{
+    margin-top: 0;
+    font-size: 14px;
+}
+
+.footer_contact{
+    display: flex;
+    text-align: left;
+    padding-left: 20px;
+
+}
+.contact_name{
+    width: 150px;
+    font-size: 15px;
+    padding: 0 0px 5px 0px;
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+.footer_contact__contact{
+    width: 50px;
+}
+.contact_name_item{
+    margin: 0;
+    align-content:flex-start;
+}
+.footer_contact__contact{
+    width: 50%;
+}
+h5{
+    align-content:flex-start;
+    padding: 0;
+}

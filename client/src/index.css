@@ -15,7 +15,7 @@ code {
     monospace;
 }
 .App{
-  
+  position: relative;
 }
 .Container{
   max-width: 1230px;
@@ -42,3 +42,5 @@ a{
  @import url("./components/mainPages/products/product.css");
 
  @import url('./components/mainPages/utilts/loading/css.css');
+
+ @import url('./components/mainPages/auth/styles.css');

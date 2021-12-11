@@ -27,6 +27,8 @@ function Register() {
     return (
         <div className = {classes.loginPage}>
         <form onSubmit={registerSubmit}>
+        <h3 class="auth-form__heading">Đăng ký</h3>
+
             <input type="text" name = "name" required placeholder="Name" 
             value = {user.name} onChange={onChangeInput} />
 
@@ -35,10 +37,15 @@ function Register() {
 
             <input type="password" name = "password" required placeholder="password" 
             autoComplete='on' value = {user.password} onChange={onChangeInput}/>
-            
+              <div class="auth-form__aside">
+                <p class="auth-form__policy-text">Bằng việc đăng ký, bạn đồng ý với điều khoản dịch vụ và chính sách bảo mật của chúng tôi</p>
+                <a href="" class="auth-form__link">Diều khoản dịch vụ và chính sách bảo mật</a>
+                            
+            </div>
             <div className = {classes.row}>
-                <button type='submit'>Register</button>
                 <Link to = '/login'>Login</Link>
+                <button type='submit'>Register</button>
+
             </div>
         </form>
         </div>
