@@ -56,10 +56,18 @@ function UserAPI(token) {
     useEffect(()=>{
         if(token){
             const getHistory = async()=>{
-                const res = await Axios.get('/user/history',{
-                    headers: {Authorization: token}
-                })
-                setHistory(res.data)
+                if(isAdmin){
+                    const res = await Axios.get('/api/payment',{
+                        headers:{Authorization: token}
+                    })
+                    setHistory(res.data)
+                }else{
+                    const res = await Axios.get('/user/history',{
+                        headers: {Authorization: token}
+                    })
+                    setHistory(res.data)
+                }
+             
 
             }
             getHistory()

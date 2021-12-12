@@ -9,7 +9,7 @@ function CategoriesAPI() {
         const getCategories = async () =>{
             const res = await Axios.get('/api/category')
             setCategories(res.data)
-            console.log(res)
+            // console.log(res.data)
         }
 
         getCategories()
