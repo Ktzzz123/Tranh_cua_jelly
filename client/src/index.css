@@ -44,3 +44,5 @@ a{
  @import url('./components/mainPages/utilts/loading/css.css');
 
  @import url('./components/mainPages/auth/styles.css');
+
+ @import url('./components/mainPages/createProduct/styles.css');

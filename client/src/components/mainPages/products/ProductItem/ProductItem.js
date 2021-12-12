@@ -9,13 +9,11 @@ function ProductItem({product, isAdmin}) {
     const classes = useStyles()
     return (
         <div className = {classes.product_card}>
-            {
-                isAdmin && <input type="checkbox" checked={product.checked}></input>
-            }
+         
             <img className = {classes.image} src={product.images.url} alt="" />
             <div className={classes.product_infor}>
                 <h2  title={product.title }>{product.title}</h2>
-                <span>${product.price}</span>
+                <span>{product.price} VND</span>
                 <p>{product.description}</p>
             </div>
             

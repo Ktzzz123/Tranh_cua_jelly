@@ -11,6 +11,7 @@ import Loading from './utilts/loading/loading'
 import { GlobalState } from '../../GlobalState';
 import OrderHistory from './history/OrderHistory'
 import Categories from './categories/Categories'
+import CreateProduct from './createProduct/CreateProduct'
 
 
 function Page () {
@@ -29,6 +30,7 @@ function Page () {
            <Route path = '/cart' exact component = {Cart}/>
            <Route path = '/history' exact component = {isLogged? OrderHistory: NotFound }/>
            <Route path = '/category' exact component = {isAdmin? Categories: NotFound }/>
+           <Route path = '/create_product' exact component = {isAdmin? CreateProduct: NotFound }/>
         
            <Route path = '/loading' exact component = {Loading}/>
 
