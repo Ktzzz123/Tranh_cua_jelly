@@ -14,6 +14,7 @@ function Header () {
     const state = useContext(GlobalState);
     const [isLogged] = state.userAPI.isLogged
     const [isAdmin] = state.userAPI.isAdmin
+    const [cart] = state.userAPI.cart
     console.log(state)
     const logoutUser = async () =>{
         await Axios.get('/user/logout')
@@ -70,7 +71,7 @@ function Header () {
                 {
                     isAdmin? '' :
                     <div className = {classes.cart_icon} color = "#fff">
-                        <span className = {classes.cart_icon_span}>0</span>
+                        <span className = {classes.cart_icon_span}>{cart.length}</span>
                         <Link to = '/cart'>
                             <img src = {Cart} alt="giỏ hàng" width = '30' color = "#fff"/>
                         </Link>

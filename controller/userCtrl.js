@@ -109,6 +109,19 @@ const userCtrl = {
             return res.status(500).json({msg: err.message})
 
         }
+    },
+    addcart: async( req, res)=>{
+        try{
+            const user =  await Users.findById(req.user.id)
+            if(!user) return res.status(400).json({msg: 'user does not exist.'})
+            await Users.findOneAndUpdate({_id: req.user.id},{
+                cart: req.body.cart
+            })
+            return res.status(200).json({msg: 'Add success'})
+        }catch{
+            return res.status(500).json({msg: err.message})
+
+        }
     }
 
 
