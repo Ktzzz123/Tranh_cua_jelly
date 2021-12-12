@@ -3,20 +3,22 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
     Container:{
         marginTop:'20px',
-        width:'100%',
-        // display: 'flex',
+        width:'60%',
+        maxheight: '800px',
+        display: 'flex',
         // justifyContent:'space-around',
         // flexWrap:'wrap',
         padding: '50px',
         fontSize: '150%',
         border: 'solid 1px',
         alignItems: 'center',
-        borderRadius: '10px'
+        borderRadius: '10px',
+        margin: 'auto'
     },
     images:{
         maxWidth: "800px",
         minWidth: "300px",
-        height:'500px',
+        maxheight:'500px',
         objectFit:'cover',
         margin: 'auto',
         border: 'solid 1px #ddd',
@@ -24,11 +26,12 @@ export default makeStyles((theme) => ({
 
     },
     box_detail:{
+        paddingLeft: '20px',
         marginTop:'20px',
         // maxWidth: '500px',
         justifyContent:'space-between',
         width:"100%",
-        borderTop: '1px solid #ddd',
+        // border: '1px solid #ddd',
      
       
         "& h2":{
@@ -69,7 +72,8 @@ export default makeStyles((theme) => ({
         margin: '0 20px',
     },
     fullImage:{
-        borderTop: '1px solid #ddd',
+        // borderTop: '1px solid #ddd',
+        
         padding: '20px',
         
         width: '90%',
@@ -80,7 +84,6 @@ export default makeStyles((theme) => ({
         },
         margin:'auto'
     },
-  // Cart
     CartItem:{
         width: '500px',
         height: '500px',
@@ -97,11 +100,12 @@ export default makeStyles((theme) => ({
             width: '40px',
             height: '40px',
             border: '1px solid #777',
+            borderRadius: '5px'
         },
     },
     delete:{
-        position: 'absolute',
-        top:0,
+        // position: 'absolute',
+        // top:0,
         right: '5px',
         color: 'crimson',
         fontWeight: 900,

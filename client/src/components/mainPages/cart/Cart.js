@@ -1,6 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {GlobalState} from '../../../GlobalState'
-import useStyles from '../products/detailProduct/styles'
+import useStyles from './styles'
+import close from '../../Header/icon/close.svg'
 
 import Axios from 'axios'
 import { Link } from 'react-router-dom'
@@ -12,37 +13,71 @@ function Cart() {
     const [total, setTotal] = useState(0)
     const [token] = state.token
 
-    
-    if(cart.length === 0) 
-        return <h2 style={{textAlign: "center", fontSize: "5rem"}}>Cart Empty</h2> 
-        const addToCart = async (cart) =>{
-            await Axios.patch('/user/addcart', {cart}, {
-                headers: {Authorization: token}
-            })
+    useEffect(() =>{
+        const getTotal = () =>{
+            const total = cart.reduce((prev, item) => {
+                return prev + (item.price * item.quantity)
+            },0)
+
+            setTotal(total)
         }
-        const increment = (id) =>{
-            cart.forEach(item => {
+
+        getTotal()
+
+    },[cart])
+
+    if(cart.length === 0) return <h2 style={{textAlign: "center", fontSize: "5rem"}}>Cart Empty</h2> 
+    
+
+    const addToCart = async (cart) =>{
+        await Axios.patch('/user/addcart', {cart}, {
+            headers: {Authorization: token}
+        })
+    }
+
+
+    const increment = (id) =>{
+        cart.forEach(item => {
+            if(item._id === id){
+                item.quantity += 1
+            }
+        })
+
+        setCart([...cart])
+        addToCart(cart)
+    }
+
+
+    const decrement = (id) =>{
+        cart.forEach(item => {
+            if(item._id === id){
+                item.quantity === 1 ? item.quantity = 1 : item.quantity -= 1
+            }
+        })
+
+        setCart([...cart])
+        addToCart(cart)
+    }
+
+      const removeProduct = id =>{
+        if(window.confirm("Do you want to delete this product?")){
+            cart.forEach((item, index) => {
                 if(item._id === id){
-                    item.quantity += 1
+                    cart.splice(index, 1)
                 }
             })
-    
+
             setCart([...cart])
             addToCart(cart)
         }
+    }
     
-        const decrement = (id) =>{
-            cart.forEach(item => {
-                if(item._id === id){
-                    item.quantity === 1 ? item.quantity = 1 : item.quantity -= 1
-                }
-            })
-        }
+
     return (
             <>
                 {
                 cart.map(product => (
-                    <div className={classes.Container +classes.cart }>
+                    <div key={product._id} className={classes.Container}>
                         <img className={classes.images} src={product.images.url} alt = "" />
                         <div className = {classes.box_detail}>
                             <div className = {classes.row}>
@@ -56,8 +91,10 @@ function Cart() {
                                 <button onClick={() => decrement(product._id)}> - </button>
                                 <span>{product.quantity}</span>
                                 <button onClick={() => increment(product._id)}> + </button>
+                                
+                                <div className={classes.delete} onClick={() => removeProduct(product._id)} >X</div>
                             </div>
-                            <div className={classes.delete}>X</div>
+                            
                         </div>
                     </div>
                 

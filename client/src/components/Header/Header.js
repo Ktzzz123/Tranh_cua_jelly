@@ -39,7 +39,7 @@ function Header () {
             < >
                 <li className={classes.navbarItem_item}><Link to="/history">History</Link></li>
                 <li className={classes.navbarItem_item}><Link to="/" onClick={logoutUser}>Logout</Link></li>
-                {/* {console.log( [isLogged, setIsLogged])} */}
+                
 
             </>
         )
