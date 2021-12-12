@@ -5,6 +5,7 @@ import close from '../../Header/icon/close.svg'
 
 import Axios from 'axios'
 import { Link } from 'react-router-dom'
+import PayPal from './PaypalButton'
 
 function Cart() {
     const state = useContext(GlobalState)
@@ -71,7 +72,17 @@ function Cart() {
             addToCart(cart)
         }
     }
-    
+    const tranSuccess = async(payment) => {
+        const {paymentID, address} = payment;
+
+        await Axios.post('/api/payment', {cart, paymentID, address}, {
+            headers: {Authorization: token}
+        })
+
+        setCart([])
+        addToCart([])
+        alert("You have successfully placed an order.")
+    }
 
     return (
             <>
@@ -102,7 +113,7 @@ function Cart() {
                 }
                 <div className = {classes.total}>
                     <h3> Total: {total} </h3>
-                    <Link to = '#!'>Payment</Link>
+                    <PayPal/>
                 </div>
             </>
     )
