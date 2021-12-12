@@ -1,9 +1,10 @@
 import React, {useState, useContext} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import Axios from 'axios'
-
+import useStyles from './styles'
 function Categories() {
     const state = useContext(GlobalState)
+    const classes = useStyles()
     const [categories] = state.categoriesAPI.categories
     const [category, setCategory] = useState('')
     const [token] = state.token
@@ -53,9 +54,9 @@ function Categories() {
     }
 
     return (
-        <div className="categories">
-            {/* <form onSubmit={createCategory}> */}
-            <form >
+        <div className={classes.categories}>
+            <form onSubmit={createCategory}>
+           
 
                 <label htmlFor="category">Category</label>
                 <input type="text" name="category" value={category} required
@@ -64,16 +65,14 @@ function Categories() {
                 <button type="submit">{onEdit? "Update" : "Create"}</button>
             </form>
 
-            <div className="col">
+            <div className={classes.col}>
                 {
                     categories.map(category => (
-                        <div className="row" key={category._id}>
+                        <div className={classes.row} key={category._id}>
                             <p>{category.name}</p>
                             <div>
-                                <button >Edit</button>
                                 <button onClick={() => editCategory(category._id, category.name)}>Edit</button>
                                 <button onClick={() => deleteCategory(category._id)}>Delete</button>
-                                <button >Delete</button>
                             </div>
                         </div>
                     ))

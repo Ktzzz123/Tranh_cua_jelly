@@ -10,7 +10,7 @@ import Loading from './utilts/loading/loading'
 
 import { GlobalState } from '../../GlobalState';
 import OrderHistory from './history/OrderHistory'
-import CategoriesAPI from '../../api/CategoriesAPI'
+import Categories from './categories/Categories'
 
 
 function Page () {
@@ -28,7 +28,7 @@ function Page () {
            <Route path = '/register' exact component = {isLogged? NotFound: Register}/>
            <Route path = '/cart' exact component = {Cart}/>
            <Route path = '/history' exact component = {isLogged? OrderHistory: NotFound }/>
-           <Route path = '/category' exact component = {isAdmin? CategoriesAPI: NotFound }/>
+           <Route path = '/category' exact component = {isAdmin? Categories: NotFound }/>
         
            <Route path = '/loading' exact component = {Loading}/>
 
