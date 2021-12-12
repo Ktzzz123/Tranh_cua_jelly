@@ -4,7 +4,7 @@ import{GlobalState} from '../../../../GlobalState'
 import useStyles from './styles'
 
 
-const BtnRender = ({product}) => {
+const BtnRender = ({product, deleteProduct}) => {
     const classes = useStyles()
     const state = useContext(GlobalState)
     const [isAdmin]=state.userAPI.isAdmin
@@ -15,7 +15,10 @@ const BtnRender = ({product}) => {
             isAdmin? 
             <>
             <div className={classes.row_btn}>
-                <Link id="btn_buy" to='#!'>Delete</Link>
+            <Link id="btn_buy" to="#!" 
+                    onClick={() =>deleteProduct(product._id, product.images.public_id)}>
+                        Delete
+                    </Link>
                 <Link id="btn_view" to={`/edit_product/${product._id}`}>edit</Link>
                 </div>
 

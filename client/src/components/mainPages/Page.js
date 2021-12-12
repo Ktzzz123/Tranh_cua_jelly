@@ -31,6 +31,7 @@ function Page () {
            <Route path = '/history' exact component = {isLogged? OrderHistory: NotFound }/>
            <Route path = '/category' exact component = {isAdmin? Categories: NotFound }/>
            <Route path = '/create_product' exact component = {isAdmin? CreateProduct: NotFound }/>
+           <Route path = '/edit_product/:id' exact component = {isAdmin? CreateProduct: NotFound }/>
         
            <Route path = '/loading' exact component = {Loading}/>
 
