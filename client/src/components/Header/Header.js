@@ -15,7 +15,7 @@ function Header () {
     const [isLogged] = state.userAPI.isLogged
     const [isAdmin] = state.userAPI.isAdmin
     const [cart] = state.userAPI.cart
-    console.log(state)
+    // console.log(state)
     const logoutUser = async () =>{
         await Axios.get('/user/logout')
         

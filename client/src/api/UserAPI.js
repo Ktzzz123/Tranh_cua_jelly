@@ -5,7 +5,11 @@ function UserAPI(token) {
     const [isLogged, setisLogged] = useState(false)
     const [isAdmin, setisAdmin] = useState(false)
     const [cart, setCart] = useState([])
-
+    const [history, setHistory] = useState([])
+   
+   
+   
+   
     const addCart = async (product) => {
         if(!isLogged) return alert("Please login to continue buying")
 
@@ -30,14 +34,15 @@ function UserAPI(token) {
         if(token){
             const getUser = async () =>{
                 try {
+                    console.log(token, 'token');
                     const res = await Axios.get('/user/infor', {
                         headers: {Authorization: token}
                     })
+                    console.log(res)
 
                     setisLogged(true)
                     setCart(res.data.cart)
                     res.data.role === 1 ? setisAdmin(true) : setisAdmin(false)
-                    console.log(res)
                 } catch (err) {
                     alert(err.response.data.msg)
                 }
@@ -47,11 +52,27 @@ function UserAPI(token) {
             
         }
     },[token])
+
+    useEffect(()=>{
+        if(token){
+            const getHistory = async()=>{
+                const res = await Axios.get('/user/history',{
+                    headers: {Authorization: token}
+                })
+                setHistory(res.data)
+
+            }
+            getHistory()
+
+        }
+    },[token])
+
     return {
         isLogged: [isLogged, setisLogged],
         isAdmin: [isAdmin, setisAdmin],
         cart: [cart, setCart],
-        addCart : addCart
+        addCart: addCart,
+        history: [history, setHistory]
     }
 }
 

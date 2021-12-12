@@ -2,8 +2,10 @@ const Users = require('../models/userModel')
 const bcrypt = require('bcrypt')
 const jwt =require('jsonwebtoken')
 
+const Payments = require('../models/paymentModel')
+
 const createAccessToken = (user) => {
-    return jwt.sign(user,process.env.ACCESS_TOKEN_SEC, {expiresIn: '1d'} )
+    return jwt.sign(user,process.env.ACCESS_TOKEN_SEC, {expiresIn: '30d'} )
 }
 
 const createRefreshToken = (user) => {
@@ -33,14 +35,14 @@ const userCtrl = {
 
             // create jsonwebtoken to authentication
             const accesstoken = createAccessToken({id: newUser._id})
-            const refreshtoken = createRefreshToken({id: newUser._id})
+            const refreshToken = createRefreshToken({id: newUser._id})
 
-            res.cookie('refreshtoken', refreshtoken, {
+            res.cookie('refreshToken', refreshToken, {
                 httpOnly: true,
                 path: '/user/refresh_token',
                 maxAge: 7*24*60*60*1000 // 7d
             })
-
+            console.log(accesstoken)
             res.json({accesstoken})
 
         } catch (err) {
@@ -49,8 +51,9 @@ const userCtrl = {
     },
    refreshToken: (req, res) =>{
     try {
-        const rf_token = req.cookies.refreshtoken;
-        if(!rf_token) return res.status(400).json({msg: "Please Login or Register"})
+        const rf_token = req.cookies.refreshToken;
+        console.log(req.cookies);
+        if(!rf_token) return res.status(400).json({msg: "Please Login or Register first"})
 
         jwt.verify(rf_token, process.env.REFRESH_TOKEN_SEC, (err, user) =>{
             if(err) return res.status(400).json({msg: "Please Login or Register"})
@@ -121,6 +124,15 @@ const userCtrl = {
         }catch{
             return res.status(500).json({msg: err.message})
 
+        }
+    },
+    history:async(req, res) =>{
+        try {
+            const history = await Payments.find({user_id: req.user.id})
+
+            res.json(history)
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
         }
     }
 

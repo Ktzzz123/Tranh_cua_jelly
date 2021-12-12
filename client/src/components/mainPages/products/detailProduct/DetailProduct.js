@@ -10,7 +10,7 @@ function DetailProduct() {
     const [products] = state.productsAPI.products
     const [detailProduct, setdetailProduct] = useState([])
     const classes = useStyles()
-
+    const addCart = state.userAPI.addCart
 
     useEffect(()=>{
         console.log('re render')
@@ -39,7 +39,10 @@ function DetailProduct() {
                     <p>{detailProduct.description}</p>
                     <p>{detailProduct.content}</p>
                     <p>sold: {detailProduct.sold}</p>
-                    <Link to='/cart' className = {classes.cart}>Buy Now</Link>
+
+                    <Link to='/cart' className = {classes.cart} 
+                    onClick={()=>addCart(detailProduct)}
+                    >Buy Now</Link>
                 </div>
             <div className = {classes.fullImage}>
             <h2>Full Picture</h2>

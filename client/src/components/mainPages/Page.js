@@ -9,6 +9,7 @@ import NotFound from './utilts/not_found/NotFound'
 import Loading from './utilts/loading/loading'
 
 import { GlobalState } from '../../GlobalState';
+import OrderHistory from './history/OrderHistory'
 
 
 function Page () {
@@ -24,6 +25,7 @@ function Page () {
            <Route path = '/login' exact component = {isLogged? NotFound: Login}/>
            <Route path = '/register' exact component = {isLogged? NotFound: Register}/>
            <Route path = '/cart' exact component = {Cart}/>
+           <Route path = '/history' exact component = {isLogged? OrderHistory: NotFound }/>
 
            <Route path = '/loading' exact component = {Loading}/>
 

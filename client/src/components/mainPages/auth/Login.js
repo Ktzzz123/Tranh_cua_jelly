@@ -18,9 +18,11 @@ function Login() {
     const loginSubmit = async e =>{
         e.preventDefault()
         try{
-            await Axios.post('/user/login', {...user})
+            const res = await Axios.post('/user/login', {...user})
+            // await Axios.post('/user/login', {...user})
             localStorage.setItem('firstLogin',true)
             window.location.href="/"
+           console.log(res)
         }catch(err){
             alert(err.response.data.msg)
         }
