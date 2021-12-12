@@ -1,10 +1,8 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import useStyles from './styles'
-import close from '../../Header/icon/close.svg'
 
 import Axios from 'axios'
-import { Link } from 'react-router-dom'
 import PayPal from './PaypalButton'
 
 function Cart() {

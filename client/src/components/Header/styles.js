@@ -8,7 +8,7 @@ export default makeStyles((theme) => ({
         overflow: 'hidden',
         display:'flex',
         flexWrap:'wrap',
-        justifyContent: 'space-around',
+        justifyContent: 'space-evenly',
         alignItems:'center',
         borderBottom:'1px solid #ddd',
         backgroundColor:'black',
@@ -19,6 +19,7 @@ export default makeStyles((theme) => ({
         zIndex: 1
     },
     logo:{
+        marginLeft: '50px',
         flex: 1,
         textTransform: 'uppercase',
         color: 'white'

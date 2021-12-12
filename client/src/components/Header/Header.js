@@ -27,8 +27,8 @@ function Header () {
     const adminRouter = () =>{
         return(
             <>
-                <li><Link to="/create_product">Create Product</Link></li>
-                <li><Link to="/category">Categories</Link></li>
+                <li className={classes.navbarItem_item}><Link to="/create_product">Create Product</Link></li>
+                <li className={classes.navbarItem_item}><Link to="/category">Categories</Link></li>
                 {/* {console.log( [isAdmin])} */}
             </>
         )
@@ -48,12 +48,10 @@ function Header () {
 
     return (
         <header className={classes.container}>
-            <div className={classes.menu}>
-                <img src={Menu} alt='' width='30px'/>
-            </div>
+          
             <div className = {classes.logo}>
             <h1>
-                    <Link to="/">{isAdmin ? 'Admin' : 'Jellys shop'}</Link>
+                    <Link to="/">{isAdmin ? 'Admin' : `Jelly's shop`}</Link>
                 </h1>
             </div>
             <ul className = {classes.navbarItem}>
@@ -64,9 +62,7 @@ function Header () {
                 {
                     isLogged ? loggedRouter() : <li className = {classes.navbarItem_item}><Link to='/login'>Login/Register</Link></li>
                 }
-                <li className = {classes.navbarItem_item}>
-                    <img src={close} alt="" width='30px'/>
-                </li>
+                
             </ul>
                 {
                     isAdmin? '' :

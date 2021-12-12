@@ -26,7 +26,7 @@ code {
 }
 a{
   text-decoration: none;
-  /* color: #fff; */
+  color: #fff;
 }
  ul li{
    list-style: none;
@@ -46,3 +46,5 @@ a{
  @import url('./components/mainPages/auth/styles.css');
 
  @import url('./components/mainPages/createProduct/styles.css');
+
+ @import url('./components/Footer/footer.css');
