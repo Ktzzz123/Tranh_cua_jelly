@@ -10,12 +10,14 @@ import Loading from './utilts/loading/loading'
 
 import { GlobalState } from '../../GlobalState';
 import OrderHistory from './history/OrderHistory'
+import CategoriesAPI from '../../api/CategoriesAPI'
 
 
 function Page () {
 
     const state = useContext(GlobalState)
     const [isLogged] = state.userAPI.isLogged
+    const [isAdmin ] = state.userAPI.isAdmin
 
  
     return (
@@ -26,7 +28,8 @@ function Page () {
            <Route path = '/register' exact component = {isLogged? NotFound: Register}/>
            <Route path = '/cart' exact component = {Cart}/>
            <Route path = '/history' exact component = {isLogged? OrderHistory: NotFound }/>
-
+           <Route path = '/category' exact component = {isAdmin? CategoriesAPI: NotFound }/>
+        
            <Route path = '/loading' exact component = {Loading}/>
 
            <Route path = '*' exact component = {NotFound}/>

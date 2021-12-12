@@ -34,17 +34,17 @@ function UserAPI(token) {
         if(token){
             const getUser = async () =>{
                 try {
-                    console.log(token, 'token');
+                    // console.log(token, 'token');
                     const res = await Axios.get('/user/infor', {
                         headers: {Authorization: token}
                     })
-                    console.log(res)
+                    // console.log(res)
 
                     setisLogged(true)
                     setCart(res.data.cart)
                     res.data.role === 1 ? setisAdmin(true) : setisAdmin(false)
                 } catch (err) {
-                    alert(err.response.data.msg)
+                    alert(err.message)
                 }
             }
 

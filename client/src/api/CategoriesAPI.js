@@ -13,7 +13,7 @@ function CategoriesAPI() {
         }
 
         getCategories()
-    },[callback])
+    },[])
     return {
         categories: [categories, setCategories],
         callback: [callback, setCallback]
