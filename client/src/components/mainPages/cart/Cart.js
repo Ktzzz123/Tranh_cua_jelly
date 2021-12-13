@@ -111,7 +111,11 @@ function Cart() {
                 }
                 <div className = {classes.total}>
                     <h3> Total: {total} </h3>
-                    <PayPal/>
+                    <PayPal  
+                    total={total}
+                    tranSuccess={tranSuccess}
+
+                />
                 </div>
             </>
     )
