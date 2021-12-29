@@ -19,6 +19,7 @@ export const DataProvider = ({children})=>{
         }, 10 * 60 * 1000)
 
     }
+    
     useEffect(()=>{
         const firstLogin =  localStorage.getItem('firstLogin')
         if (firstLogin) {   

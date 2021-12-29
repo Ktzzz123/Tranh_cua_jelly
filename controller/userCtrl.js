@@ -5,7 +5,7 @@ const jwt =require('jsonwebtoken')
 const Payments = require('../models/paymentModel')
 
 const createAccessToken = (user) => {
-    return jwt.sign(user,process.env.ACCESS_TOKEN_SEC, {expiresIn: '30d'} )
+    return jwt.sign(user,process.env.ACCESS_TOKEN_SEC, {expiresIn: '3d'} )
 }
 
 const createRefreshToken = (user) => {
@@ -42,6 +42,7 @@ const userCtrl = {
                 path: '/user/refresh_token',
                 maxAge: 7*24*60*60*1000 // 7d
             })
+            // console.log(refreshToken)
             // console.log(accesstoken)
             res.json({accesstoken})
 
